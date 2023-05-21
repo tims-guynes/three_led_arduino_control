@@ -1,9 +1,9 @@
 int LED1 = 10; //pins 10-12 are to be LED outputs
 int LED2 = 11;
 int LED3 = 12;
-int Switch1 = 2;  //pins 2-4 are to be switch inputs
+int Switch1 = 4;  //pins 2-4 are to be switch inputs
 int Switch2 = 3;
-int Switch3 = 4;
+int Switch3 = 2;
  
 void setup() {
 //now setup our input and output pins accordingly
@@ -33,8 +33,114 @@ void loop() {
     morse_letter_s(LED3); 
     
   }
+  if ((digitalRead(Switch1) == HIGH) && (digitalRead(Switch2) == HIGH) && (digitalRead(Switch3) == LOW)){
+    morse_letter_h(LED1);
+    morse_letter_e(LED1);
+    morse_letter_l(LED1);
+    morse_letter_l(LED1);
+    morse_letter_o(LED1);
+    delay(500);
+    morse_letter_w(LED2);
+    morse_letter_o(LED2);
+    morse_letter_r(LED2);
+    morse_letter_l(LED2);
+    morse_letter_d(LED2);
+  }
+
  
  
+}
+
+int morse_letter_d(int LED_select){
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(1000);
+}
+
+int morse_letter_e(int LED_select){
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);  
+}
+
+int morse_letter_h(int LED_select){
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(1000);  
+}
+
+int morse_letter_l(int LED_select){
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(1000); 
+}
+
+int morse_letter_o(int LED_select){
+  //take LED to use and output the letter in morse code
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(1000);
+
+}
+
+int morse_letter_r(int LED_select){
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(250);
+  digitalWrite(LED_select, LOW);
+  delay(100);
+  digitalWrite(LED_select, HIGH);
+  delay(100);
+  digitalWrite(LED_select, LOW);
+  delay(1000);
 }
 
 int morse_letter_s(int LED_select){
@@ -54,10 +160,9 @@ int morse_letter_s(int LED_select){
 
 }
 
-int morse_letter_o(int LED_select){
-  //take LED to use and output the letter in morse code
+int morse_letter_w(int LED_select){
   digitalWrite(LED_select, HIGH);
-  delay(250);
+  delay(100);
   digitalWrite(LED_select, LOW);
   delay(100);
   digitalWrite(LED_select, HIGH);
@@ -67,6 +172,5 @@ int morse_letter_o(int LED_select){
   digitalWrite(LED_select, HIGH);
   delay(250);
   digitalWrite(LED_select, LOW);
-  delay(1000);
-
+  delay(1000);  
 }
